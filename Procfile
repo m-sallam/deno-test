@@ -1,1 +1,1 @@
-cc7e06c840b81934174cf4912c2d9069ccfc94d8
+web: deno run --allow-net=:${PORT} --cached-only main.ts --port=${PORT}
