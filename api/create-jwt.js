@@ -22,7 +22,11 @@ export async function handler(
         statusCode: 422,
       };
     } else {
-      const token = makeJwt(postBoody.payload)
+      const header = {
+        alg: "HS256",
+        typ: "JWT",
+      };
+      const token = makeJwt({ header, payload: postBoody.payload, key })
       return {
         body: JSON.stringify(
           { token, errors: null },
