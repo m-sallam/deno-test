@@ -4,7 +4,7 @@ export async function handler(
 ){
   console.log(typeof event.body)
   if (JSON.parse(event.body)?.body) {
-    console.log(JSON.parse(atob(SON.parse(event.body)?.body)));
+    console.log(JSON.parse(atob(JSON.parse(event.body)?.body)));
   }
   return {
     body: `Welcome to deno ${Deno.version.deno} 🦕`,
