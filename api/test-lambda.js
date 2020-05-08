@@ -2,7 +2,8 @@ export async function handler(
   event,
   context
 ){
-  if (event.body?.body) {
+  console.log(typeof event.body)
+  if (JSON.parse(event.body)?.body) {
     console.log(JSON.parse(atob(event.body?.body)));
   }
   return {
