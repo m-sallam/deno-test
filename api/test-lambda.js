@@ -2,8 +2,7 @@ export async function handler(
   event,
   context
 ) {
-  console.log(event,'e')
-  console.log(context, 'c')
+  console.log(JSON.stringify(event),'e')
   return {
     statusCode: 200,
     body: `Welcome to deno ${Deno.version.deno} 🦕`,
